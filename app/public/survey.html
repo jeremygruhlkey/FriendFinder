@@ -8,8 +8,6 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src='app/data/friends.js'></script>
-    
 </head>
 
 <body>
@@ -28,7 +26,7 @@
                 <hr>
             
                 <h3><strong>Question 1</strong></h3>
-                <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+                <h4>Cats a re better than dogs.</h4>
                 <select class="chosen-select" id="q1">
                   <option value=""></option>
                   <option value="1">1 (Strongly Disagree)</option>
@@ -39,7 +37,7 @@
                 </select>
             
                 <h3><strong>Question 2</strong></h3>
-                <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+                <h4>Star Wars is a "science fiction" movie.</h4>
                 <select class="chosen-select" id="q2">
                   <option value=""></option>
                   <option value="1">1 (Strongly Disagree)</option>
@@ -51,7 +49,7 @@
             
             
                 <h3><strong>Question 3</strong></h3>
-                <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+                <h4>Twilight and Fifty Shades are crap.</h4>
                 <select class="chosen-select" id="q3">
                   <option value=""></option>
                   <option value="1">1 (Strongly Disagree)</option>
@@ -63,7 +61,7 @@
             
             
                 <h3><strong>Question 4</strong></h3>
-                <h4>You rarely do something just out of sheer curiosity.</h4>
+                <h4>There's no need to travel outside the US. We have everything here.</h4>
                 <select class="chosen-select" id="q4">
                   <option value=""></option>
                   <option value="1">1 (Strongly Disagree)</option>
@@ -75,7 +73,7 @@
             
             
                 <h3><strong>Question 5</strong></h3>
-                <h4>People can rarely upset you.</h4>
+                <h4>People suck.</h4>
                 <select class="chosen-select" id="q5">
                   <option value=""></option>
                   <option value="1">1 (Strongly Disagree)</option>
@@ -87,7 +85,7 @@
             
             
                 <h3><strong>Question 6</strong></h3>
-                <h4>It is often difficult for you to relate to other people’s feelings.</h4>
+                <h4>Women. Sheesh. Am I right?</h4>
                 <select class="chosen-select" id="q6">
                   <option value=""></option>
                   <option value="1">1 (Strongly Disagree)</option>
@@ -99,7 +97,7 @@
             
             
                 <h3><strong>Question 7</strong></h3>
-                <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+                <h4>Yesterday was Tuesday.</h4>
                 <select class="chosen-select" id="q7">
                   <option value=""></option>
                   <option value="1">1 (Strongly Disagree)</option>
@@ -110,7 +108,7 @@
                 </select>
             
                 <h3><strong>Question 8</strong></h3>
-                <h4>You rarely get carried away by fantasies and ideas.</h4>
+                <h4>This form has too many questions.</h4>
                 <select class="chosen-select" id="q8">
                   <option value=""></option>
                   <option value="1">1 (Strongly Disagree)</option>
@@ -121,7 +119,7 @@
                 </select>
             
                 <h3><strong>Question 9</strong></h3>
-                <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
+                <h4>You think that money is important.</h4>
                 <select class="chosen-select" id="q9">
                   <option value=""></option>
                   <option value="1">1 (Strongly Disagree)</option>
@@ -132,7 +130,7 @@
                 </select>
             
                 <h3><strong>Question 10</strong></h3>
-                <h4>You feel more energetic after spending time with a group of people.</h4>
+                <h4>Bourbon, NOT vodka.</h4>
                 <select class="chosen-select" id="q10">
                   <option value=""></option>
                   <option value="1">1 (Strongly Disagree)</option>
@@ -152,7 +150,7 @@
                 <hr>
                 <footer class="footer">
                   <div class="container">
-                    <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
+                    <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/jeremygruhlkey/FriendFinder">GitHub Repo</a></p>
                   </div>
                 </footer>
             
@@ -180,6 +178,43 @@
                 </div>
               </div>
 
+    <script type="text/javascript" src="survey.js"></script>
 
 </body>
+
+<!-- <script type ="text/javascript">
+
+    function getFriendsData() {
+        const currentURL = window.location.origin;
+
+        $.ajax({url: currentURL + "/api/friends", method: "GET"})
+            .done(function(friends){
+                console.log(currentURL);
+                console.log("-------------------")
+                console.log(friends)
+            })
+    }
+
+    getFriendsData();
+
+    $("#submit").on("click", function(){
+        const newFriend = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            scores: [$("#q1").val().trim(), $("#q2").val().trim(), $("#q3").val().trim(), $("#q4").val().trim(),
+            $("#q5").val().trim(), $("#q6").val().trim(), $("#q7").val().trim(), $("#q8").val().trim(), $("#q9").val().trim(), $("#q10").val().trim()]
+        }
+        
+        const currentURL = window.location.origin;
+
+        $.post(currentURL + "/api/friends", newFriend, function(data){
+            if (data == true){
+                alert("yay, friend added");
+            }else{ alert("didn't work");}
+        })
+
+        $("#name").val("");
+        $("#photo").val("");
+    })
+</script> -->
 </html>

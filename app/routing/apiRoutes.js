@@ -1,3 +1,7 @@
-/// holds GET and POST api routes
-/// GET displays the JSON objects of all stored friends
-/// POST handles the incoming results from survey.js
+const friendsData = require("../data/friends.js");
+
+module.exports = function(app){
+    app.get("/api/friends", function(req, res){
+        res.json(friendsData)
+    });
+}

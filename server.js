@@ -12,8 +12,9 @@ const PORT = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname,'./app/public')));
 
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 require("./app/routing/apiRoutes.js")(app)
 require("./app/routing/htmlRoutes")(app);

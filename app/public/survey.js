@@ -32,7 +32,7 @@ console.log("in link file");
         //     dataType: 'application/json'
         //   })
 
-        $.post(currentURL + "/api/friends", JSON.stringify(newFriend), function(data){
+        $.post(currentURL + "/api/friends", newFriend, function(data){
             if (data == true){
                 alert("yay, friend added");
             }else{ alert("didn't work");}

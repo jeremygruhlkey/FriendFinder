@@ -1,8 +1,3 @@
-// holds the js that 
-// captures survey input, 
-// makes the ajax call to 
-// and displays the results modal
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");

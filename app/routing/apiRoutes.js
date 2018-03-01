@@ -6,9 +6,7 @@ module.exports = function(app){
     });
 
     app.post("/api/friends", function(req, res){
-        // console.log(req.body.scores);
         newScores = req.body.scores.map(score => Number(score));
-        // console.log(newScores);
         let currentScore;
         let closestMatch = ""
         for (i = 0; i < friendsData.length; i++){

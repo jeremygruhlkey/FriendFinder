@@ -33,9 +33,12 @@ console.log("in link file");
         //   })
 
         $.post(currentURL + "/api/friends", newFriend, function(data){
-            if (data == true){
-                alert("yay, friend added");
-            }else{ alert("didn't work");}
+            console.log(data);
+            if (data){
+                $("#match-name").html(data.name);
+                $("#match-img").attr("src", data.photo);
+                $("#results-modal").modal();
+            }
         })
 
         $("#name").val("");

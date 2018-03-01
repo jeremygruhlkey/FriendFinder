@@ -20,16 +20,16 @@ module.exports = function(app){
             }
             if (!currentScore){
                 currentScore = totalDifference;
-                closestMatch = friendsData[i].name;
+                closestMatch = friendsData[i];
             }
             else if(totalDifference < currentScore){
                 currentScore = totalDifference;
-                closestMatch = friendsData[i].name;
+                closestMatch = friendsData[i];
             }
             console.log(currentScore);
             console.log(closestMatch);
         }
         friendsData.push(req.body);
-        res.json(true);
+        res.json(closestMatch);
     })
 }

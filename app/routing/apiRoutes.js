@@ -22,7 +22,7 @@ module.exports = function(app){
                 currentScore = totalDifference;
                 closestMatch = friendsData[i];
             }
-            else if(totalDifference < currentScore){
+            else if(totalDifference < currentScore){ 
                 currentScore = totalDifference;
                 closestMatch = friendsData[i];
             }

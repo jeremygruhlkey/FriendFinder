@@ -1,11 +1,11 @@
 const friendsData = require("../data/friends.js");
 
-module.exports = function(app){
-    app.get("/api/friends", function(req, res){
+module.exports = (app) => {
+    app.get("/api/friends", (req, res) => {
         res.json(friendsData)
     });
 
-    app.post("/api/friends", function(req, res){
+    app.post("/api/friends", (req, res) => {
         newScores = req.body.scores.map(score => Number(score));
         let closestMatch = "";
         function getAnswerDifference(baseline, answers) {
@@ -24,8 +24,6 @@ module.exports = function(app){
           
           closestMatch = differences[0];
           
-          console.log(differences);
-          console.log(closestMatch);
         friendsData.push(req.body);
         res.json(closestMatch);
     })

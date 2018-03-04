@@ -25,7 +25,6 @@ console.log("in link file");
         const currentURL = window.location.origin;
 
         $.post(currentURL + "/api/friends", newFriend, (data) => {
-            console.log(data);
             if (data){
                 $("#match-name").html(data.name);
                 $("#match-img").attr("src", data.photo);

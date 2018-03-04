@@ -12,7 +12,7 @@ let friendsArray = [
     {
         name: "Barack Obama",
         photo: "https://pbs.twimg.com/profile_images/822547732376207360/5g0FC8XX_400x400.jpg",
-        scores: [1,4,4,2,5,3,3,5,3,4]
+        scores: [1,4,1,2,5,3,2,5,3,4]
     }
 ]
 

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready( () => {
 
 console.log("in link file");
     function getFriendsData() {
@@ -14,7 +14,7 @@ console.log("in link file");
 
     getFriendsData();
 
-    $("#submit").on("click", function(){
+    $("#submit").on("click", () => {
         const newFriend = {
             name: $("#name").val().trim(),
             photo: $("#photo").val().trim(),
@@ -24,7 +24,7 @@ console.log("in link file");
         
         const currentURL = window.location.origin;
 
-        $.post(currentURL + "/api/friends", newFriend, function(data){
+        $.post(currentURL + "/api/friends", newFriend, (data) => {
             console.log(data);
             if (data){
                 $("#match-name").html(data.name);

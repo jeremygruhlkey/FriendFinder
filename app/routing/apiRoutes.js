@@ -7,7 +7,6 @@ module.exports = function(app){
 
     app.post("/api/friends", function(req, res){
         newScores = req.body.scores.map(score => Number(score));
-        let currentScore;
         let closestMatch = "";
         function getAnswerDifference(baseline, answers) {
             return baseline
